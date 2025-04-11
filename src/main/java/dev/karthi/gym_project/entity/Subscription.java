@@ -1,8 +1,5 @@
 package dev.karthi.gym_project.entity;
 
-import jakarta.persistence.Entity;
-
-
 import java.time.LocalDateTime;
 
 public class Subscription {
