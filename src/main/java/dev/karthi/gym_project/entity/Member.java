@@ -3,28 +3,33 @@ package dev.karthi.gym_project.entity;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class Member {
-    private String memberId;
-    private String firstName;
-    private String lastName;
-    private String email;
-    private String phoneNumber;
-    private String gender;
-    private LocalDate dateOfBirth;
-    private String address;
-    private String city;
-    private String country;
-    private String postalCode;
-    private boolean isActive;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
+		@Id
+		private String id;
+	    private String firstName;
+	    private String lastName;
+	    private String email;
+	    private String phoneNumber;
+	    private String gender;
+	    private LocalDate dateOfBirth;
+	    private String address;
+	    private String city;
+	    private String country;
+	    private String postalCode;
+	    private boolean isActive;
+	    private LocalDateTime createdAt;
+	    private LocalDateTime updatedAt;
     
     
 	public String getMemberId() {
-		return memberId;
+		return id;
 	}
 	public void setMemberId(String memberId) {
-		this.memberId = memberId;
+		this.id = memberId;
 	}
 	public String getFirstName() {
 		return firstName;
@@ -108,7 +113,7 @@ public class Member {
 			LocalDate dateOfBirth, String address, String city, String country, String postalCode, boolean isActive,
 			LocalDateTime createdAt, LocalDateTime updatedAt) {
 		super();
-		this.memberId = memberId;
+		this.id = memberId;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
