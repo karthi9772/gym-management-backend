@@ -1,4 +1,4 @@
-****Gym Management System - API Documentation**
+**Gym Management System - API Documentation**
 
 This document outlines the REST API endpoints for managing **members** and **subscriptions** within the Gym Management System.
 
@@ -58,4 +58,3 @@ This document outlines the REST API endpoints for managing **members** and **sub
 | GET    | `/stats/new-members?month=2025-04` | Count of new members in given month |
 
 ---
-**
