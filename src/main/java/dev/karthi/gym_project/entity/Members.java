@@ -3,8 +3,15 @@ package dev.karthi.gym_project.entity;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-public class Member {
-    private String memberId;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "members")
+public class Members {
+	@Id
+    private String id;
     private String firstName;
     private String lastName;
     private String email;
@@ -20,11 +27,11 @@ public class Member {
     private LocalDateTime updatedAt;
     
     
-	public String getMemberId() {
-		return memberId;
+	public String getId() {
+		return id;
 	}
-	public void setMemberId(String memberId) {
-		this.memberId = memberId;
+	public void setId(String memberId) {
+		this.id = memberId;
 	}
 	public String getFirstName() {
 		return firstName;
@@ -104,11 +111,12 @@ public class Member {
 	public void setUpdatedAt(LocalDateTime updatedAt) {
 		this.updatedAt = updatedAt;
 	}
-	public Member(String memberId, String firstName, String lastName, String email, String phoneNumber, String gender,
+	
+	public Members(String memberId, String firstName, String lastName, String email, String phoneNumber, String gender,
 			LocalDate dateOfBirth, String address, String city, String country, String postalCode, boolean isActive,
 			LocalDateTime createdAt, LocalDateTime updatedAt) {
 		super();
-		this.memberId = memberId;
+		this.id = memberId;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
@@ -124,7 +132,7 @@ public class Member {
 		this.updatedAt = updatedAt;
 	}
 	
-	public Member() {
+	public Members() {
 		super();
 	}
 

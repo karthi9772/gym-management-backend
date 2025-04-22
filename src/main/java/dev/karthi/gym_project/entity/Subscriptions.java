@@ -2,18 +2,26 @@ package dev.karthi.gym_project.entity;
 
 import java.time.LocalDateTime;
 
-public class Subscription {
-    private Long id;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+
+public class Subscriptions {
+    @Id
+	private String id;
     private String memberId; // foreign key to Member
     private String planType; // monthly, 3months, etc.
     private double amount;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
     private boolean isActive;
-	public Long getId() {
+	
+	public String getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public String getMemberId() {
@@ -52,7 +60,7 @@ public class Subscription {
 	public void setActive(boolean isActive) {
 		this.isActive = isActive;
 	}
-	public Subscription(Long id, String memberId, String planType, double amount, LocalDateTime startDate,
+	public Subscriptions(String id, String memberId, String planType, double amount, LocalDateTime startDate,
 			LocalDateTime endDate, boolean isActive) {
 		super();
 		this.id = id;
@@ -63,7 +71,7 @@ public class Subscription {
 		this.endDate = endDate;
 		this.isActive = isActive;
 	}
-	public Subscription() {
+	public Subscriptions() {
 		super();
 	}
 
