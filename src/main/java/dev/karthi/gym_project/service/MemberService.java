@@ -29,4 +29,12 @@ public class MemberService {
 	public Members AddNewMember(Members mem) {
 		return memDao.save(mem);
 	}
+
+    public Members GetByName(String firstName,String lastName) {
+    	return memDao.findByFirstNameAndLastNameIgnoreCase(firstName,lastName);
+	}
+    
+    public List<Members> getByName(String firstName){
+    	return memDao.findByFirstNameIgnoreCase(firstName);
+    }
 }

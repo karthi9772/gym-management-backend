@@ -9,4 +9,6 @@ import dev.karthi.gym_project.entity.Subscriptions;
 @Repository
 public interface SubscriptionDao extends JpaRepository<Subscriptions, String>{
 
+    Subscriptions findByMemberId(String id);
+
 }
