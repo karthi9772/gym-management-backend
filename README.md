@@ -1,4 +1,4 @@
-**Gym Management System - API Documentation**
+###Gym Management System - API Documentation
 
 This document outlines the REST API endpoints for managing **members** and **subscriptions** within the Gym Management System.
 
