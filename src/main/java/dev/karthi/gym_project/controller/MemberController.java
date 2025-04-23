@@ -118,4 +118,11 @@ public class MemberController {
                     .body(new ApiResponse<>(false, "Error occurred: " + e.getMessage(), null));
         }
     }
+    
+    
+    
+    
+    
+    
+    
 }
