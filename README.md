@@ -22,7 +22,8 @@ This document outlines the REST API endpoints for managing **members** and **sub
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| GET    | `/api/gym/members/search?name=John`   | Find members by partial/full name |
+| GET    | `/api/gym/members/search?firstName=arun`   | Find members by partial/full name |
+| GET    | `/api/gym/members/search?firstName=arun&lastName=kumar`   | Find members by FirstName & LastName |
 | GET    | `/api/gym/members/active`             | Get list of members with active subscriptions |
 | GET    | `/api/gym/members/no-subscription`    | Identify members not subscribed |
 
