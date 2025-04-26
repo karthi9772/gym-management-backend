@@ -18,4 +18,8 @@ public interface MemberDao extends JpaRepository<Members, String> {
 	public Members findByFirstNameAndLastNameIgnoreCase(String firstName,String LastName);
 
 	public List<Members> findByFirstNameIgnoreCase(String firstName);
+	
+	public List<Members> findByIsActiveTrue();
+	
+	public List<Members> findByIsActiveFalse();
 }

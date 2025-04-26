@@ -37,4 +37,14 @@ public class MemberService {
     public List<Members> getByName(String firstName){
     	return memDao.findByFirstNameIgnoreCase(firstName);
     }
+    
+    public List<Members> getActive(){
+    	return memDao.findByIsActiveTrue();
+    }
+    
+    public List<Members> inActive(){
+    	return memDao.findByIsActiveFalse();
+    }
+    
+    
 }

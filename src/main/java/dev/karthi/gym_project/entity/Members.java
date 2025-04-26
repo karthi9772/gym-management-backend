@@ -3,6 +3,7 @@ package dev.karthi.gym_project.entity;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -22,6 +23,8 @@ public class Members {
     private String city;
     private String country;
     private String postalCode;
+    
+    @Column(name = "is_active")
     private boolean isActive;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;

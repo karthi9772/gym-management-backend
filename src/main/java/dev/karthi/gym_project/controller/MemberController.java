@@ -119,7 +119,44 @@ public class MemberController {
         }
     }
     
+    @GetMapping("/active")
+    public ResponseEntity<ApiResponse<List<Members>>> getIsActive(){
+    	
+    	try {
+    		List<Members> mems= memberService.getActive();
+    		if(mems==null) {
+    			return ResponseEntity.status(HttpStatus.NO_CONTENT).body(new ApiResponse<>(false,"NO users Found",null));
+    		}
+    		return ResponseEntity.status(HttpStatus.OK).body(new ApiResponse<>(true,"Members Found",mems));
+    		
+    	}
+    	catch (Exception e) {
+    		return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ApiResponse<>(false,"Error Occured"+e.getMessage(),null));
+
+		}
+    	
+    	
+    }
     
+    
+    @GetMapping("no-subscription")
+    public ResponseEntity<ApiResponse<List<Members>>> getNoSubscription(){
+    	try {
+    		
+    		List<Members> mems=memberService.inActive();
+    		if(mems==null) {
+    			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ApiResponse<>(false,"NOT FOUND",null));
+    			
+    		}
+    		return ResponseEntity.status(HttpStatus.OK).body(new ApiResponse<>(true,"Members With no-subscription found",mems));
+    	}
+    	catch (Exception e) {
+    		return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ApiResponse<>(false,"Error Occured:"+e.getMessage(),null));
+
+		}
+    	
+    	
+    }
     
     
     
